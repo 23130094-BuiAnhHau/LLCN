@@ -8,8 +8,8 @@ public class Event {
     private String title;
     private LocalDateTime start;
     private LocalDateTime end;
-    private String recurrenceRule; // e.g. rfc5545 RRULE (nullable)
-    private boolean fixed = true; // true nếu không thể dời
+    private String recurrenceRule;
+    private boolean fixed = true;
 
     public Event(String title, LocalDateTime start, LocalDateTime end, boolean fixed) {
         if (title == null || title.trim().isEmpty()) {

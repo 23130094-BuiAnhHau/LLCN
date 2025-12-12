@@ -57,6 +57,4 @@ public class Notification {
         return read;
     }
 
-    // getters / setters
-
 }

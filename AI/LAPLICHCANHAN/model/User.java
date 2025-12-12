@@ -6,7 +6,7 @@ public class User {
     private UUID id;
     private String name;
     private String email;
-    private List<TimeSlot> workingHours = new ArrayList<>(); // ví dụ 08:00-22:00 từng ngày
+    private List<TimeSlot> workingHours = new ArrayList<>();
 
     public User(String name, String email) {
         this.id = UUID.randomUUID();

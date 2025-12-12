@@ -20,7 +20,7 @@ public class Task {
     // danh sách slot mà scheduler có thể dùng (tùy implementation)
     private List<TimeSlot> availableSlots = new ArrayList<TimeSlot>();
 
-    // preferred slots: user muốn làm vào những khoảng này (ưu tiên đặt vào)
+    // user muốn làm vào những khoảng này (ưu tiên đặt vào)
     private List<TimeSlot> preferredSlots = new ArrayList<TimeSlot>();
 
     // nếu true -> scheduler có thể đặt task ngoài working hours của user

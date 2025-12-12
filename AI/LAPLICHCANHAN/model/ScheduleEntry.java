@@ -36,7 +36,7 @@ public class ScheduleEntry {
         this.id = id;
         this.type = type;
         this.slot = slotCopy;
-        this.task = taskRef; // Task & Event là shared reference (immutable về logic)
+        this.task = taskRef;
         this.event = eventRef;
     }
 

@@ -12,9 +12,6 @@ public class SchedulerConflictTest {
 
     public static void main(String[] args) {
 
-        // ------------------------
-        // Chuẩn bị dữ liệu mẫu
-        // ------------------------
         User user = new User("Hau", "hau@example.com");
 
         user.addWorkingHour(new TimeSlot(
@@ -55,7 +52,7 @@ public class SchedulerConflictTest {
 
         SimpleHillClimbingScheduler scheduler = new SimpleHillClimbingScheduler();
 
-        System.out.println("=== 1) Default generateInitialSchedule (day-range default) ===");
+        System.out.println("=== 1) Default generateInitialSchedule  ===");
         Schedule initial = scheduler.generateInitialSchedule(tasks, events, user);
         printScheduleEntries(initial);
 
@@ -67,7 +64,7 @@ public class SchedulerConflictTest {
 
         LocalDate monthStart = LocalDate.now();
         LocalDate monthEnd = monthStart.plusDays(29);
-        System.out.println("\n=== 3) 30-day schedule (month-like) from " + monthStart + " to " + monthEnd + " ===");
+        System.out.println("\n=== 3) 30-day schedule from " + monthStart + " to " + monthEnd + " ===");
         Schedule month = scheduler.generateScheduleForRange(tasks, events, user, monthStart, monthEnd);
         printScheduleEntries(month);
 
@@ -77,7 +74,7 @@ public class SchedulerConflictTest {
         Schedule sem = scheduler.generateSemesterSchedule(tasks, events, user, semStart, semEnd);
         printScheduleEntries(sem);
 
-        System.out.println("\n=== 5) Hill Climbing optimize weekly schedule ===");
+        System.out.println("\n Hill Climbing optimize weekly schedule");
         Schedule optimizedWeek = scheduler.hillClimb(week);
         printScheduleEntries(optimizedWeek);
         System.out.println("Final score: " + scheduler.score(optimizedWeek));
